@@ -1,10 +1,8 @@
 # libfetch
 
-A C library similar to the [fetch API of browsers](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). Pretty easy to use. For instructions on usage, please go [here](#usage).
+A C library for a thread pool. Pretty easy to use. For instructions on usage, please go [here](#usage).
 
 For installation, please go [here](#installation). For documentation, please go [here](#documentation).
-
-**NOTE**: Only supports HTTP connections as of now.
 
 ## Usage
 
