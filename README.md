@@ -1,4 +1,4 @@
-# libfetch
+# libtpool
 
 A C library for a thread pool. Pretty easy to use. For instructions on usage, please go [here](#usage).
 
