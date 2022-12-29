@@ -79,6 +79,12 @@ void* hello(void *args) {
 ```
 
 ### Step 3
+Create a new thread pool to later push tasks to it:
+```c
+tpool_t *pool = tpool_new(4); // Initialized with 4 threads
+```
+
+### Step 4
 
 Push tasks (functions) to queue for being executed:
 
@@ -88,7 +94,7 @@ tpool_push(pool, hello, NULL);
 
 You can use a for loop to emulate multiple execution requests.
 
-### Step 4
+### Step 5
 
 Finish the thread pool (important step for all pending tasks to get over before exiting main):
 
