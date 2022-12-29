@@ -4,9 +4,9 @@
 #include <include/tqueue.h>
 
 void
-tpool_push(struct tpool *pool,void* (*routine) (void*), void *args)
+tpool_push(tpool_t *pool, routine_t routine, void *args)
 {
-	struct task *new_task = malloc(sizeof(struct task));
+	task_t *new_task = malloc(sizeof(task_t));
 	new_task->routine = routine;
 	new_task->args = args;
 
@@ -16,12 +16,12 @@ tpool_push(struct tpool *pool,void* (*routine) (void*), void *args)
 	pthread_mutex_unlock(pool->tpool_lock);
 }
 
-struct task*
-tpool_pop(struct tpool *pool)
+task_t*
+tpool_pop(tpool_t *pool)
 {
 	sem_wait(&pool->full);
 
-	struct task *popped_task;
+	task_t *popped_task;
 
 	pthread_mutex_lock(pool->tpool_lock);
 	popped_task = queue_pop(pool->queue);

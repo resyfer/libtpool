@@ -1,14 +1,12 @@
-#include <include/task.h>
 #include <include/tqueue.h>
-#include <stdio.h>
 
 void *
 task_worker(void *args)
 {
-	struct tpool *pool = args;
+	tpool_t *pool = args;
 
 	while(1) {
-		struct task *popped_task = tpool_pop(pool);
+		task_t *popped_task = tpool_pop(pool);
 
 		if(popped_task->routine == tpool_stop) {
 			break;

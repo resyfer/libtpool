@@ -1,12 +1,12 @@
-#include "tpool.h"
-
 #ifndef __LIBTPOOL_TASK_H
 #define __LIBTPOOL_TASK_H
 
-struct task {
+#include "tpool.h"
+
+typedef struct {
 	void* (*routine) (void*);
 	void* args;
-};
+} task_t;
 
 void *task_worker(void *args);
 

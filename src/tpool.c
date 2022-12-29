@@ -1,16 +1,15 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <stdio.h>
-#include <libqueue/libqueue.h>
+#include <libqueue/queue.h>
 
 #include <include/tpool.h>
-#include <include/task.h>
 #include <include/tqueue.h>
 
-struct tpool*
+tpool_t*
 tpool_new(u_int8_t size)
 {
-	struct tpool *new_pool = malloc(sizeof(struct tpool));
+	tpool_t *new_pool = malloc(sizeof(tpool_t));
 	new_pool->size = size;
 	new_pool->threads = malloc(size * sizeof(pthread_t));
 	new_pool->queue = queue_new();
@@ -45,7 +44,7 @@ tpool_stop(void* args)
 }
 
 void
-tpool_finish(struct tpool *pool)
+tpool_finish(tpool_t *pool)
 {
 	for(u_int8_t i = 0; i<pool->size; i++) {
 		tpool_push(pool, tpool_stop, NULL);

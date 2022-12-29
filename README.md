@@ -11,21 +11,29 @@ For installation, please go [here](#installation). For documentation, please go 
 The shown below is a tl;dr version. Proper instructions are [here](#step-1)
 
 ```c
-#include <libtpool/libtpool.h>
+#include <libtpool/tpool.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void* hello(void *args) {
-	printf("%d\n", pthread_self());
+	int *k = args;
+	int i;
+	for(i = 0; i<100000; i++);
+	printf("%d %d\n", *k, i);
+	free(k);
+	return NULL;
 }
 
 int main() {
-	struct tpool *pool = tpool_new(4);
+	tpool_t *pool = tpool_new(4);
 
 	int n;
 	scanf("%d", &n);
 
 	for(int i = 0; i<n; i++) {
-		tpool_push(pool, hello, NULL);
+		int *j = malloc(sizeof(int));
+		*j = i;
+		tpool_push(pool, hello, (void*) j);
 	}
 
 	tpool_finish(pool);
@@ -45,7 +53,7 @@ $ ./test.o
 Import the library:
 
 ```c
-#include <libtpool/libtpool.h>
+#include <libtpool/tpool.h>
 ```
 
 **NOTE**: Link the library and dependencies when compiling
@@ -56,15 +64,17 @@ $ gcc a.c -o a.o -ltpool -lpthread -lqueue
 
 ### Step 2
 
-Create a dummy function to execute:
+Create a computationaly heavy dummy function of type `routine_t` to execute:
 
 ```c
 // Dummy function of type `void* fun(void* args)`
-void* hello(void* args) {
-  printf("%d\n", pthread_self());
-  // This just prints the ID of the thread
-  // it is running in within the thread pool
-  return NULL;
+void* hello(void *args) {
+	int *k = args;
+	int i;
+	for(i = 0; i<100000; i++);
+	printf("%d %d\n", *k, i);
+	free(k);
+	return NULL;
 }
 ```
 
@@ -113,17 +123,26 @@ Provide the password when prompted.
 ### Intialization
 
 ```c
-struct tpool* tpool_new(u_int8_t size);
+tpool_t* tpool_new(u_int8_t size);
 ```
 
 ### Push Tasks to Thread Pool
 
 ```c
-void tpool_push(struct tpool *pool,void* (*routine) (void*), void *args);
+void tpool_push(tpool_t *pool, routine_t routine, void *args);
+```
+
+`routine_t` is of type:
+```c
+typedef void* (*routine_t) (void*);
+// ie. a function which looks like:
+// void* hello(void* args) {
+//
+// }
 ```
 
 ### Finish Thread Pool
 
 ```c
-void tpool_finish(struct tpool *pool);
+void tpool_finish(tpool_t *pool);
 ```
