@@ -1,0 +1,53 @@
+\hypertarget{tqueue_8h}{}\doxysection{include/tqueue.h File Reference}
+\label{tqueue_8h}\index{include/tqueue.h@{include/tqueue.h}}
+
+
+This header file contains the various functionality of the queue-\/wrapper that the thread pool uses for queueing up waiting tasks and well as choosing a task for execution.  
+
+
+{\ttfamily \#include $<$libqueue/queue.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pool.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{tqueue_8h_aa145b9fb7e8dbfd0893d62cd93163336}\label{tqueue_8h_aa145b9fb7e8dbfd0893d62cd93163336}} 
+typedef void $\ast$($\ast$ {\bfseries routine\+\_\+t}) (void $\ast$)
+\begin{DoxyCompactList}\small\item\em Type of a routine, ie. a task, which is pushed to the thread pool for execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{tqueue_8h_a095fe854f2a30c8e5a7278a641aa0594}{tpool\+\_\+push}} (\mbox{\hyperlink{structtpool__t}{tpool\+\_\+t}} $\ast$pool, \mbox{\hyperlink{tqueue_8h_aa145b9fb7e8dbfd0893d62cd93163336}{routine\+\_\+t}} routine, void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Push a routine, ie. task, to the thread pool for execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header file contains the various functionality of the queue-\/wrapper that the thread pool uses for queueing up waiting tasks and well as choosing a task for execution. 
+
+\begin{DoxyAuthor}{Author}
+Saurav Pal (resyfer) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000005}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tqueue_8h_a095fe854f2a30c8e5a7278a641aa0594}\label{tqueue_8h_a095fe854f2a30c8e5a7278a641aa0594}} 
+\index{tqueue.h@{tqueue.h}!tpool\_push@{tpool\_push}}
+\index{tpool\_push@{tpool\_push}!tqueue.h@{tqueue.h}}
+\doxysubsubsection{\texorpdfstring{tpool\_push()}{tpool\_push()}}
+{\footnotesize\ttfamily void tpool\+\_\+push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtpool__t}{tpool\+\_\+t}} $\ast$}]{pool,  }\item[{\mbox{\hyperlink{tqueue_8h_aa145b9fb7e8dbfd0893d62cd93163336}{routine\+\_\+t}}}]{routine,  }\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Push a routine, ie. task, to the thread pool for execution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pool} & Thread pool instance \\
+\hline
+{\em routine} & Task \\
+\hline
+{\em args} & Arguments for the task \\
+\hline
+\end{DoxyParams}

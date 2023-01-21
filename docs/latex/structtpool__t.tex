@@ -1,0 +1,66 @@
+\hypertarget{structtpool__t}{}\doxysection{tpool\+\_\+t Struct Reference}
+\label{structtpool__t}\index{tpool\_t@{tpool\_t}}
+
+
+Thread pool instance.  
+
+
+
+
+{\ttfamily \#include $<$pool.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int8\+\_\+t \mbox{\hyperlink{structtpool__t_ab107653b74055b3ebd3dfbbca7050edd}{size}}
+\item 
+pthread\+\_\+t $\ast$ \mbox{\hyperlink{structtpool__t_a1d8bbdb8c81519acb6a989f6da8ac327}{threads}}
+\item 
+queue\+\_\+t \mbox{\hyperlink{structtpool__t_a14262eb71f187a748f44494a0db61a64}{queue}}
+\item 
+pthread\+\_\+mutex\+\_\+t $\ast$ \mbox{\hyperlink{structtpool__t_a1b4aa77225dbcd7c024ac7c75c5ded4a}{tpool\+\_\+lock}}
+\item 
+sem\+\_\+t \mbox{\hyperlink{structtpool__t_af1bb9f859591d549ca9f7e845b62d908}{empty}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Thread pool instance. 
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structtpool__t_af1bb9f859591d549ca9f7e845b62d908}\label{structtpool__t_af1bb9f859591d549ca9f7e845b62d908}} 
+\index{tpool\_t@{tpool\_t}!empty@{empty}}
+\index{empty@{empty}!tpool\_t@{tpool\_t}}
+\doxysubsubsection{\texorpdfstring{empty}{empty}}
+{\footnotesize\ttfamily sem\+\_\+t tpool\+\_\+t\+::empty}
+
+Semaphore for tracking if queue for tasks is empty ~\newline
+ \mbox{\Hypertarget{structtpool__t_a14262eb71f187a748f44494a0db61a64}\label{structtpool__t_a14262eb71f187a748f44494a0db61a64}} 
+\index{tpool\_t@{tpool\_t}!queue@{queue}}
+\index{queue@{queue}!tpool\_t@{tpool\_t}}
+\doxysubsubsection{\texorpdfstring{queue}{queue}}
+{\footnotesize\ttfamily queue\+\_\+t tpool\+\_\+t\+::queue}
+
+Queue for the tasks \mbox{\Hypertarget{structtpool__t_ab107653b74055b3ebd3dfbbca7050edd}\label{structtpool__t_ab107653b74055b3ebd3dfbbca7050edd}} 
+\index{tpool\_t@{tpool\_t}!size@{size}}
+\index{size@{size}!tpool\_t@{tpool\_t}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily u\+\_\+int8\+\_\+t tpool\+\_\+t\+::size}
+
+Number of threads in the thread pool \mbox{\Hypertarget{structtpool__t_a1d8bbdb8c81519acb6a989f6da8ac327}\label{structtpool__t_a1d8bbdb8c81519acb6a989f6da8ac327}} 
+\index{tpool\_t@{tpool\_t}!threads@{threads}}
+\index{threads@{threads}!tpool\_t@{tpool\_t}}
+\doxysubsubsection{\texorpdfstring{threads}{threads}}
+{\footnotesize\ttfamily pthread\+\_\+t$\ast$ tpool\+\_\+t\+::threads}
+
+Array of threads \mbox{\Hypertarget{structtpool__t_a1b4aa77225dbcd7c024ac7c75c5ded4a}\label{structtpool__t_a1b4aa77225dbcd7c024ac7c75c5ded4a}} 
+\index{tpool\_t@{tpool\_t}!tpool\_lock@{tpool\_lock}}
+\index{tpool\_lock@{tpool\_lock}!tpool\_t@{tpool\_t}}
+\doxysubsubsection{\texorpdfstring{tpool\_lock}{tpool\_lock}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t$\ast$ tpool\+\_\+t\+::tpool\+\_\+lock}
+
+Mutex for choosing a task 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{pool_8h}{pool.\+h}}\end{DoxyCompactItemize}

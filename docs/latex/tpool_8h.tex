@@ -1,0 +1,66 @@
+\hypertarget{tpool_8h}{}\doxysection{include/tpool.h File Reference}
+\label{tpool_8h}\index{include/tpool.h@{include/tpool.h}}
+
+
+This is the entry header for the library.  
+
+
+{\ttfamily \#include \char`\"{}pool.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}global.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tqueue.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{tpool_8h_ab9da9ef3c69774be3ef45b8fb4d333cd}{tpool\+\_\+new}} (\mbox{\hyperlink{structtpool__t}{tpool\+\_\+t}} $\ast$pool, u\+\_\+int8\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Initialize a thread pool library. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tpool_8h_ab0ba23079f044b2469ec05fdf35ce8d8}{tpool\+\_\+finish}} (\mbox{\hyperlink{structtpool__t}{tpool\+\_\+t}} $\ast$pool)
+\begin{DoxyCompactList}\small\item\em Finish the thread pool execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the entry header for the library. 
+
+\begin{DoxyAuthor}{Author}
+Saurav Pal (resyfer) 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000004}{Bug}}]No known bugs \end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tpool_8h_ab0ba23079f044b2469ec05fdf35ce8d8}\label{tpool_8h_ab0ba23079f044b2469ec05fdf35ce8d8}} 
+\index{tpool.h@{tpool.h}!tpool\_finish@{tpool\_finish}}
+\index{tpool\_finish@{tpool\_finish}!tpool.h@{tpool.h}}
+\doxysubsubsection{\texorpdfstring{tpool\_finish()}{tpool\_finish()}}
+{\footnotesize\ttfamily void tpool\+\_\+finish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtpool__t}{tpool\+\_\+t}} $\ast$}]{pool }\end{DoxyParamCaption})}
+
+
+
+Finish the thread pool execution. 
+
+Once this is executed, the thread pool stops accepting tasks, completes all of the waiting tasks, and then cleans up all of the memory that it assigned internally for executions including destroying all of the threads in the thread pool.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pool} & Thread pool instance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tpool_8h_ab9da9ef3c69774be3ef45b8fb4d333cd}\label{tpool_8h_ab9da9ef3c69774be3ef45b8fb4d333cd}} 
+\index{tpool.h@{tpool.h}!tpool\_new@{tpool\_new}}
+\index{tpool\_new@{tpool\_new}!tpool.h@{tpool.h}}
+\doxysubsubsection{\texorpdfstring{tpool\_new()}{tpool\_new()}}
+{\footnotesize\ttfamily void tpool\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtpool__t}{tpool\+\_\+t}} $\ast$}]{pool,  }\item[{u\+\_\+int8\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Initialize a thread pool library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pool} & Thread pool instance to initialize \\
+\hline
+{\em size} & Number of threads the thread pool instance will have \\
+\hline
+\end{DoxyParams}

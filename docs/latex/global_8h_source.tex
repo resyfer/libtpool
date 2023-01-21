@@ -1,0 +1,25 @@
+\hypertarget{global_8h_source}{}\doxysection{global.\+h}
+\label{global_8h_source}\index{include/global.h@{include/global.h}}
+\mbox{\hyperlink{global_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_\_LIBTPOOL\_GLOBAL\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_\_LIBTPOOL\_GLOBAL\_H 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#ifndef OS}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{    \#ifdef \_\_unix\_\_}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{        \#ifdef \_\_linux\_\_}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{            \#define OS "{}Linux"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{        \#else}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{            \#define OS "{}Unix"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{    \#elif \_\_APPLE\_\_}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{        \#define OS "{}Darwin"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{    \#elif \_WIN32}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{        \#define OS "{}Win32"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

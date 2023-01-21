@@ -1,0 +1,23 @@
+\hypertarget{pool_8h_source}{}\doxysection{pool.\+h}
+\label{pool_8h_source}\index{include/pool.h@{include/pool.h}}
+\mbox{\hyperlink{pool_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_\_LIBTPOOL\_POOL\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_\_LIBTPOOL\_POOL\_H 1}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <pthread.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <semaphore.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <libqueue/queue.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{19 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{20     u\_int8\_t \mbox{\hyperlink{structtpool__t_ab107653b74055b3ebd3dfbbca7050edd}{size}}; }
+\DoxyCodeLine{21     pthread\_t *\mbox{\hyperlink{structtpool__t_a1d8bbdb8c81519acb6a989f6da8ac327}{threads}}; }
+\DoxyCodeLine{22     queue\_t \mbox{\hyperlink{structtpool__t_a14262eb71f187a748f44494a0db61a64}{queue}}; }
+\DoxyCodeLine{23     pthread\_mutex\_t *\mbox{\hyperlink{structtpool__t_a1b4aa77225dbcd7c024ac7c75c5ded4a}{tpool\_lock}}; }
+\DoxyCodeLine{24     sem\_t \mbox{\hyperlink{structtpool__t_af1bb9f859591d549ca9f7e845b62d908}{empty}}; }
+\DoxyCodeLine{25 \} \mbox{\hyperlink{structtpool__t}{tpool\_t}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

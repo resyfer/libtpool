@@ -1,0 +1,3 @@
+This thread pool library creates a pool of threads for executing various tasks. Since creation and detruction of a thread is costly, the thread pool creates some amounts of threads on initialization, and runs tasks on them.
+
+As soon as a thread finishes executing a task, it takes the next waiting task and begins executing it. This increases efficiency, as it is both better than creating separate processes, as well as creating a thread for each task and managing it\textquotesingle{}s completion yourself. 
