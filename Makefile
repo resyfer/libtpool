@@ -34,7 +34,7 @@ INSTALL:=install
 
 all: $(NAME).so
 
-.PHONY: all run install docs clean
+.PHONY: all run install docs clean test
 
 $(NAME).so: $(OBJFILES)
 	@echo "Building Final Shared Object"
@@ -47,6 +47,11 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c Makefile $(OBJ_DIR)
 
 $(OBJ_DIR):
 	@mkdir $(OBJ_DIR) 2> /dev/null
+
+test: install
+	@$(CC) $(CFLAGS) -o ./$(TEST_DIR)/$(TEST).o ./$(TEST_DIR)/$(TEST).c $(LD_FLAGS)
+	@echo "------------"
+	@./$(TEST_DIR)/$(TEST).o
 
 run: install
 	@$(CC) $(CFLAGS) -o ./$(EXAMPLE_DIR)/$(TEST).o ./$(EXAMPLE_DIR)/$(EXAMPLE).c $(LD_FLAGS)
